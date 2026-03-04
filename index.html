@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent a Dent | Renta de Consultorios Odontológicos</title>
+    <meta name="description" content="Renta de consultorios odontológicos equipados por hora o día. La solución flexible para estudiantes y dentistas.">
+    
+    <meta property="og:title" content="Rent a Dent - Tu consultorio por hora">
+    <meta property="og:description" content="Sin inversión inicial. Espacios profesionales listos para trabajar.">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦷</text></svg>">
+
+    <style>
+        /* PALETA DE COLORES */
+        :root {
+            --azul-clinico: #0056b3;
+            --blanco: #ffffff;
+            --verde-menta: #2ecc71; /* Ajustado para mejor contraste/accesibilidad */
+            --gris-claro: #f8f9fa;
+            --texto-oscuro: #2c3e50;
+        }
+
+        /* RESET & BASE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--texto-oscuro);
+            background-color: var(--blanco);
+        }
+
+        h1, h2, h3 {
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        /* LAYOUT */
+        section {
+            padding: 80px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .container {
+            width: 100%;
+        }
+
+        /* BOTONES WHATSAPP */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--verde-menta);
+            color: white;
+            padding: 18px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+            text-align: center;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
+            filter: brightness(1.1);
+        }
+
+        .cta-large {
+            width: 100%;
+            max-width: 400px;
+            font-size: 1.3rem;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, var(--azul-clinico), #003d80);
+            color: var(--blanco);
+            text-align: center;
+            padding: 100px 20px;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* PROBLEMA */
+        .problem {
+            background-color: var(--blanco);
+            text-align: center;
+        }
+
+        .problem-card {
+            background: var(--gris-claro);
+            padding: 40px;
+            border-radius: 20px;
+            border-left: 5px solid var(--azul-clinico);
+        }
+
+        /* BENEFICIOS GRID */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .benefit-card {
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* CÓMO FUNCIONA */
+        .how-it-works {
+            background-color: var(--gris-claro);
+            border-radius: 30px;
+        }
+
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            background: var(--azul-clinico);
+            color: white;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        /* TESTIMONIO & PRECIO */
+        .testimonial {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--azul-clinico);
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .price-tag {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--azul-clinico);
+            margin: 20px 0;
+        }
+
+        /* FAQ */
+        .faq {
+            max-width: 700px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .faq-item strong {
+            display: block;
+            color: var(--azul-clinico);
+            margin-bottom: 5px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #eee;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .social-links a {
+            margin: 0 10px;
+            color: var(--texto-oscuro);
+            text-decoration: none;
+        }
+
+        .urgencia {
+            color: #e74c3c;
+            font-weight: bold;
+            margin-top: 15px;
+            display: block;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .cta-button { width: 100%; }
+            section { padding: 50px 20px; }
+        }
+
+        /* ANIMATION */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Rent a Dent</h1>
+            <p>Conectamos estudiantes y odontólogos con consultorios equipados por horas o días. El espacio profesional que necesitas, sin la inversión de uno propio.</p>
+            <a href="https://wa.me/5500000000?text=Hola%20Rent%20a%20Dent%2C%20me%20interesa%20reservar%20un%20espacio.%20Me%20gustaría%20agendar%20mi%20valoración%20gratuita." 
+               class="cta-button" target="_blank">
+               💬 Reserva tu espacio ahora
+            </a>
+        </div>
+    </header>
+
+    <section class="problem reveal">
+        <h2>¿Quieres atender pacientes pero no tienes consultorio?</h2>
+        <div class="problem-card">
+            <p>Sabemos que montar un consultorio propio requiere una inversión enorme que muchos estudiantes y recién egresados no tienen. <strong>Rent a Dent elimina esa barrera</strong> permitiéndote rentar un espacio totalmente equipado solo cuando lo necesites.</p>
+        </div>
+    </section>
+
+    <section class="benefits reveal">
+        <h2 style="text-align:center">Tus beneficios con Rent a Dent</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <span class="icon">💰</span>
+                <h3>Ahorro Total</h3>
+                <p>Cero inversión inicial en equipo o local.</p>
+            </div>
+            <div class="benefit-card">
+                <span class="icon">⏰</span>
+                <h3>Flexibilidad</h3>
+                <p>Tú decides tus horarios y días de trabajo.</p>
+            </div>
+            <div class="benefit-card">
+                <span class="icon">🦷</span>
+                <h3>Equipamiento</h3>
+                <p>Espacios modernos y listos para cualquier procedimiento.</p>
+            </div>
+            <div class="benefit-card">
+                <span class="icon">🚀</span>
+                <h3>Crecimiento</h3>
+                <p>Genera ingresos desde tus últimos semestres.</p>
+            </div>
+        </div>
+        <div style="text-align:center">
+            <a href="https://wa.me/5500000000?text=Hola%20Rent%20a%20Dent%2C%20vengo%20de%20la%20sección%20de%20beneficios.%20Quiero%20más%20información." 
+               class="cta-button" target="_blank">
+               📱 ¡Quiero empezar ya!
+            </a>
+        </div>
+    </section>
+
+    <section class="how-it-works reveal">
+        <h2 style="text-align:center">¿Cómo funciona?</h2>
+        <div class="steps">
+            <div class="step">
+                <span class="step-number">1</span>
+                <h3>Regístrate</h3>
+                <p>Contáctanos vía WhatsApp para validar tu perfil.</p>
+            </div>
+            <div class="step">
+                <span class="step-number">2</span>
+                <h3>Elige Horario</h3>
+                <p>Selecciona las horas o días que necesites el espacio.</p>
+            </div>
+            <div class="step">
+                <span class="step-number">3</span>
+                <h3>Atiende</h3>
+                <p>Recibe a tus pacientes en un entorno profesional.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="reveal" style="text-align:center">
+        <h2>Inversión Simple</h2>
+        <p>Transparente y accesible para tu crecimiento profesional.</p>
+        <div class="price-tag">Desde $250 MXN <small style="font-size: 1rem;">/ hora</small></div>
+    </section>
+
+    <section class="reveal" style="background-color: var(--gris-claro); border-radius: 30px;">
+        <h2 style="text-align:center">Lo que dicen nuestros usuarios</h2>
+        <div class="testimonial">
+            <p>"Gracias a Rent a Dent pude comenzar a atender pacientes sin endeudarme en un consultorio propio."</p>
+            <p style="margin-top:10px; font-weight:bold; font-style: normal;">— Estudiante de 6to semestre</p>
+        </div>
+    </section>
+
+    <section class="faq reveal">
+        <h2 style="text-align:center">Preguntas Frecuentes</h2>
+        <div class="faq-item">
+            <strong>¿El consultorio incluye instrumental?</strong>
+            <p>Contamos con paquetes que incluyen instrumental básico y avanzado, pregunta por disponibilidad.</p>
+        </div>
+        <div class="faq-item">
+            <strong>¿Puedo rentar solo por una hora?</strong>
+            <p>¡Sí! Nuestra flexibilidad te permite reservar desde una sola hora.</p>
+        </div>
+        <div class="faq-item">
+            <strong>¿Es necesario ser odontólogo titulado?</strong>
+            <p>Aceptamos estudiantes a partir de clínicas y recién egresados bajo supervisión o validación de documentos.</p>
+        </div>
+    </section>
+
+    <section style="text-align:center" class="reveal">
+        <h2>¿Listo para tu primer paciente?</h2>
+        <p>No dejes pasar la oportunidad de profesionalizar tu práctica hoy mismo.</p>
+        <div class="urgencia">⚠️ Solo 20 lugares disponibles para fase piloto.</div>
+        <br>
+        <a href="https://wa.me/5500000000?text=Hola%20Rent%20a%20Dent%2C%20quiero%20aprovechar%20uno%20de%20los%2020%20lugares%20de%20la%20fase%20piloto." 
+           class="cta-button cta-large" target="_blank">
+           🚀 RESERVA TU ESPACIO AHORA
+        </a>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <p><strong>Rent a Dent Team</strong></p>
+            <p>Contacto secundario:</p>
+            <a href="mailto:rentadent.team@gmail.com">✉️ rentadent.team@gmail.com</a> | 
+            <a href="https://instagram.com/rentadent" target="_blank">📸 @rentadent</a>
+        </div>
+        <p style="margin-top: 20px; opacity: 0.6;">&copy; 2026 Rent a Dent. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Scroll Reveal Animation
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+
+        // Ejecutar una vez al cargar por si hay elementos visibles
+        reveal();
+    </script>
+</body>
+</html>
